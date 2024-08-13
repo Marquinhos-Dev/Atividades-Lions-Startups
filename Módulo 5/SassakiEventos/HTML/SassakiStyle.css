@@ -1,0 +1,40 @@
+body{
+    background: rgb(63, 63, 63);
+    color: rgb(255, 255, 255);
+    font-family: "Kosugi Maru", sans-serif;
+}
+h1{
+    text-align: center;
+    margin-top: 70px;
+}
+.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: background-color 0.3s;
+}
+.tab button:hover {
+    background-color: #6d6d6d;
+}
+.tab button.active {
+    background-color: #ccc;
+}
+.tabcontent {
+    display: none;
+    padding: 16px;
+    border: 1px solid #ccc;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-top: none;
+}
+button{
+    color: white;
+}

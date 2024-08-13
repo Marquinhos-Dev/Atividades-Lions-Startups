@@ -1,0 +1,20 @@
+mkdir Estacao_Espacial
+cd Estacao_Espacial/
+    mkdir Habitacao Hangar Laboratorio
+        cd Habitacao/
+            touch quarto1.txt quarto2.txt quarto3.txt
+        cd ..
+        cd Laboratorio/
+            touch pesquisa1.txt pesquisa2.txt pesquisa3.txt
+        cd ..
+        cd Hangar/
+            touch EspacoNave1.txt EspacoNave2.txt EspacoNave3.txt
+        cd ..
+        rm -r Hangar/
+        touch BoasVindas.txt
+        echo 'Bem-vindos à Estação Espacial!' > BoasVindas.txt
+        cp BoasVindas.txt Laboratorio/
+            cd Laboratorio/
+            echo 'Bem vindos à Estação Espacial! Este é o Laboratório!' > BoasVindas.txt
+
+            
