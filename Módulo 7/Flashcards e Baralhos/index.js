@@ -76,7 +76,9 @@ function menuFlashcards(){
         case '1':
             pergunta = prompt(`Digite a pergunta para o flashcard: `)
             resposta = prompt(`Digite a resposta para o flashcard: `)
+            console.log()
             listarApenasBaralhos()
+            console.log()
             ID_baralho = parseInt(prompt(`Digite o ID do baralho para adicionar o flashcard: `))
             if(criarFlashcard(pergunta,resposta,ID_baralho) == false){
                 console.log(`\n--> Digite um ID válido!`)
@@ -92,9 +94,15 @@ function menuFlashcards(){
             menuFlashcards()
         break
         case '3':
-            ID_baralho = parseInt(prompt(`Digite o ID do baralho que deseja listar os flashcards: `))
-            if(listarFlashcardPorBaralho(ID_baralho) == false){
-                console.log(`\n--> Ainda não há flashcards criados!`)
+            if(listarApenasBaralhos() == false){
+                console.log(`\n--> Ainda não há baralhos cadastrados!`)
+            } else{
+                console.log()
+                ID_baralho = parseInt(prompt(`Digite o ID do baralho que deseja listar os flashcards: `))
+                console.log()
+                if(listarFlashcardPorBaralho(ID_baralho) == false){
+                    console.log(`\n--> Ainda não há flashcards criados nesse baralho!`)
+                }
             }
             menuFlashcards()
         break
@@ -102,7 +110,9 @@ function menuFlashcards(){
             if(listarTodosFlashcard() == false){
                 console.log(`\n--> Ainda não há flashcards criados!`)
             } else{
+                console.log()
                 ID_baralho = parseInt(prompt(`Digite o ID do flashcard que deseja atualizar: `))
+                console.log()
                 pergunta = prompt(`Digite a nova pergunta do flashcard: `)
                 resposta = prompt(`Digite a nova resposta do flashcard: `)
                 if(atualizarFlashcard(ID_baralho,pergunta,resposta) == true){

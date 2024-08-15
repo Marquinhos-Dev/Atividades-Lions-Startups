@@ -8,9 +8,9 @@ function criarFlashcard(pergunta,resposta,index){
     if(index < 0){
         return false
     } else{
-        let id = (flashcards[flashcards.length -1].ID) +1
+        let id = ((flashcards[flashcards.length -1].ID) +1)
 
-        flashcards.push({id,pergunta,resposta,index})
+        flashcards.push({ID: id,pergunta: pergunta,resposta: resposta,ID_baralho: index +1})
         return true
     }
 }
