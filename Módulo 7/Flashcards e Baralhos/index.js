@@ -131,7 +131,7 @@ function menuFlashcards(){
                 if(prompt(`Deseja mesmo deletar esse flashcard?(Digite s/n) `).toLowerCase() == 'n'){
                     console.log(`\n--> Cancelado!`)
                 } else{
-                    if(atualizarFlashcard(ID_baralho) == true){
+                    if(deletarFlashcard(ID_baralho) == true){
                         console.log(`\n--> Flashcard deletado com sucesso!`)
                     } else{
                         console.log(`\n--> Digite um ID válido!`)
