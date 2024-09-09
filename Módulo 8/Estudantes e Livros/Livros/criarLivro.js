@@ -1,21 +1,22 @@
 
 let {livros} = require('../data')
 
-function criarLivro(req, res) {
-  const novoLivro = {
-    id: livros.length + 1,
-    titulo: req.body.titulo,
-    autor: req.body.autor,
-    ano: req.body.ano,
-    genero: req.body.genero,
-  };
+function criarLivro(req, res){
 
-  livros.push(novoLivro);
+    const livro = {
+      ID: livros[livros.length -1].ID +1,
+      titulo: req.body.titulo,
+      autor: req.body.autor,
+      ano: req.body.ano,
+      genero: req.body.genero,
+    };
 
-  res.status(201).send({
-    message: "Livro criado com sucesso!",
-    livro: novoLivro,
-  });
+    livros.push(livro);
+
+    res.status(201).send({
+      message: "Livro criado com sucesso!",
+      criado: livro,
+    });
 }
 
 module.exports = criarLivro

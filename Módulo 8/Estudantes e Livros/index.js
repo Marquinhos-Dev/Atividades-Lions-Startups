@@ -9,13 +9,21 @@ app.use(express.json());
 
 // CRUD LIVROS
 const criarLivro = require('./Livros/criarLivro');
-const listarLivros = require('./Livros/listarLivros')
+const listarLivros = require('./Livros/listarLivros');
 const atualizarLivro = require('./Livros/atualizarLivro');
 const deletarLivro = require('./Livros/deletarLivro');
 
 // CRUD ESTUDANTE
+const criarEstudante = require('./Estudantes/criarEstudante');
+const listarEstudantes = require('./Estudantes/listarEstudante');
+const atualizarEstudante = require('./Estudantes/atualizarEstudante');
+const deletarEstudante = require('./Estudantes/deletarEstudante');
 
 // CRUD ALUGUEL
+const criarAluguel = require('./Aluguel/criarAluguel');
+const listarAlugueis = require('./Aluguel/listarAluguel');
+const atualizarAluguel = require('./Aluguel/atualizarAluguel');
+const deletarAluguel = require('./Aluguel/deletarAluguel');
 
 // BUSCAR ALUGUEL
 const bucarAluguelPorDevolucao = require('./Aluguel/buscarAluguelPorDevolucao');
@@ -34,11 +42,23 @@ const buscarEstudantePorCurso = require('./Estudantes/buscarEstudantePorCurso');
 const buscarEstudantePorMatricula = require('./Estudantes/buscarEstudantePorMatricula');
 const buscarEstudantePorNome = require('./Estudantes/buscarEstudantePorNome');
 
-// ROTAS DE CRUD
+// ROTAS DE CRUD ALUGUEL
+app.post('/aluguel',criarAluguel);
+app.get('/aluguel',listarAlugueis);
+app.put('/aluguel/:id',atualizarAluguel);
+app.delete('/aluguel/:id',deletarAluguel);
+
+// ROTAS DE CRUD LIVRO
 app.post('/livro',criarLivro);
 app.get('/livro',listarLivros);
 app.put('/livro/:id',atualizarLivro);
 app.delete('/livro/:id',deletarLivro);
+
+// ROTAS DE CRUD ESTUDANTE
+app.post('/estudante',criarEstudante);
+app.get('/estudante',listarEstudantes);
+app.put('/estudante/:id',atualizarEstudante);
+app.delete('/estudante/:id',deletarEstudante);
 
 // ROTAS DE BUSCA ALUGUEL
 app.get('/aluguel/buscar-por-devolucao',bucarAluguelPorDevolucao);

@@ -2,6 +2,7 @@
 let {livros} = require('../data')
 
 function atualizarLivro(req, res) {
+
     const { id } = req.params;
     const novoTitulo = req.body.titulo;
   
@@ -10,7 +11,7 @@ function atualizarLivro(req, res) {
     if (!livro) {
       return res.status(404).send({ message: 'Livro não encontrado' });
     }
-  
+    
     livro.titulo = novoTitulo;
     res.status(200).send({
       message: 'Livro atualizado com sucesso!',
