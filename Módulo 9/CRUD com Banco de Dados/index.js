@@ -38,7 +38,7 @@ const esquemaAluguel = new mongoose.Schema({
     dataDevolucao: { type: String, required: true },
 });
 
-// Criação dpos documentos
+// Criação dos documentos
 const Livro = mongoose.model("Livro", esquemaLivro);
 const Estudante = mongoose.model("Estudante", esquemaEstudante);
 const Aluguel = mongoose.model("Aluguel", esquemaAluguel);
