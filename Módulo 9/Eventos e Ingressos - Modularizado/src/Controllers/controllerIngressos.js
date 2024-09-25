@@ -1,6 +1,6 @@
 
 // Importa a entidade Ingressos
-const Ingresso = require('../Models/modelEventos')
+const Ingresso = require('../Models/modelIngressos')
 
 // Função CRIAR
 async function criarIngresso(req, res){
