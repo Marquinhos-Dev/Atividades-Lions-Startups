@@ -3,7 +3,7 @@ const Axios = require('axios');
 const Express = require('express');
 const app = Express();
 const porta = 3000;
-const API_KEY = require('./personalKeyAPI');
+const API_KEY = require('./KEY');
 
 app.get('/clima/:cidade',async(req,res)=>{
     try{
