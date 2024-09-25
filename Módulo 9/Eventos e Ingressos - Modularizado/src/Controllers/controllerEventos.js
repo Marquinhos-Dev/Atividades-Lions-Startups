@@ -1,6 +1,8 @@
 
+// Importa a entidade Eventos
 const Evento = require('../Models/modelEventos')
 
+// Função CRIAR
 async function criarEvento(req, res){
     try {
         const { nomeEvento, artista, data, horario } = req.body;
@@ -12,15 +14,18 @@ async function criarEvento(req, res){
     };
 };
 
+// Função LISTAR
 async function listarEventos(req,res){
     try {
-      return await Evento.find();
+      const listados = await Evento.find();
+      res.status(201).send(listados);
     } catch (erro) {
       console.error('Erro ao listar eventos:', erro);
       throw erro;
     };
 };
 
+// Função ATUALIZAR
 async function atualizarEvento(req, res){
     try {
       const { id } = req.params;
@@ -40,6 +45,7 @@ async function atualizarEvento(req, res){
     };
 };
 
+// Função DELETAR
 async function deletarEvento(req, res){
     try {
       const { id } = req.params;
@@ -54,4 +60,5 @@ async function deletarEvento(req, res){
     };
 };
 
+// Exporta as funções
 module.exports = {criarEvento,listarEventos,atualizarEvento,deletarEvento}

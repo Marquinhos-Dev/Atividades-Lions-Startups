@@ -1,5 +1,5 @@
 
-// Importa o Mongoose e o espress
+// Importa o Mongoose e o APP
 const mongoose = require('mongoose');
 const app = require('./src/app')
 
@@ -11,6 +11,4 @@ mongoose
 
 // Inicializando o servidor
 const port = 3000;
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+app.listen(port, () => {console.log(`Example app listening on port ${port}`);});

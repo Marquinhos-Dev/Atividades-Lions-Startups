@@ -1,6 +1,8 @@
 
+// Importa a entidade Ingressos
 const Ingresso = require('../Models/modelEventos')
 
+// Função CRIAR
 async function criarIngresso(req, res){
     try {
         const {ID_evento, nomeUtilizador, idade, tipo} = req.body;
@@ -12,15 +14,18 @@ async function criarIngresso(req, res){
     };
 };
 
+// Função LISTAR
 async function listarIngressos(req,res){
     try {
-      return await Ingresso.find();
+      const listados = await Ingresso.find();
+      res.status(201).send(listados);
     } catch (erro) {
       console.error('Erro ao listar ingressos:', erro);
       throw erro;
     };
 };
 
+// Função ATUALIZAR
 async function atualizarIngressos(req, res){
     try {
       const { id } = req.params;
@@ -40,6 +45,7 @@ async function atualizarIngressos(req, res){
     };
 };
 
+// Função DELETAR
 async function deletarIngressos(req, res){
     try {
       const { id } = req.params;
@@ -54,4 +60,5 @@ async function deletarIngressos(req, res){
     };
 };
 
+// Exporta as funções
 module.exports = {criarIngresso,listarIngressos,atualizarIngressos,deletarIngressos}
